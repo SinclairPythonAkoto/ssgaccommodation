@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}{% endblock %}</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		.card {
+		    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		    max-width: 300px;
+		    margin: auto;
+		    text-align: center;
+		    font-family: arial;
+		}
+
+		.topnav {
+		    overflow: hidden;
+		    background-color: darkblue;
+		}
+
+		.topnav a {
+		    float: left;
+		    color: #f2f2f2;
+		    text-align: center;
+		    padding: 14px 16px;
+		    text-decoration: none;
+		    font-size: 17px;
+		}
+
+		.topnav a:hover {
+		    background-color: yellow;
+		    color: black;
+		}
+
+		  .topnav a.active {
+		    background-color: #4CAF50;
+		    color: white;
+		}
+
+		.pagestyle {
+		    font-family: Arial;
+		    margin: 0;
+		    background-color: lightgray;
+		}
+
+		.content {
+			padding: 20px;
+			background-color: darkblue;
+		}
+
+
+
+		button {
+		    border: none;
+		    outline: 0;
+		    display: inline-block;
+		    padding: 8px;
+		    color: white;
+		    background-color: darkblue;
+		    text-align: center;
+		    cursor: pointer;
+		    width: 100%;
+		    font-size: 18px;
+		}
+
+		input[type=text], select, textarea {
+		    width: 100%;
+		    padding: 12px;
+		    border: 1px solid #ccc;
+		    border-radius: 4px;
+		    box-sizing: border-box;
+		    margin-top: 6px;
+		    margin-bottom: 16px;
+		    resize: vertical;
+		}
+
+		input[type=submit] {
+		    background-color: #4CAF50;
+		    color: white;
+		    padding: 12px 20px;
+		    border: none;
+		    border-radius: 4px;
+		    cursor: pointer;
+	  	}
+
+	  	input[type=submit]:hover {
+		    background-color: #45a049;
+		}
+
+		input[type=password], select, textarea {
+		    width: 100%;
+		    padding: 12px;
+		    border: 1px solid #ccc;
+		    border-radius: 4px;
+		    box-sizing: border-box;
+		    margin-top: 6px;
+		    margin-bottom: 16px;
+		    resize: vertical;
+		}
+
+		table {
+            border: 2px solid black;
+            border-collapse: collapse;
+            width: 50%;
+        }
+        
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+        }
+        
+        th {
+            background-color: lightgray;
+        }
+
+	</style>
+</head>
+<body>
+	<div class="topnav">
+		<a href="{{ url_for('home') }}">Home</a>
+	    <a href="#">Pics</a>
+	    <a href="{{ url_for('rooms') }}">Rooms</a>
+	    <a href="{{ url_for('contact') }}">Contact</a>
+	    <a href="#"></a>
+	    <a href="#"></a>
+	    <a href="{{ url_for('admin') }}">Admin</a> 
+	</div>
+	<div class="container">
+
+    <!-- child template -->
+    {% block content %}{% endblock %}
+
+    <!-- errors message -->
+    {% if error %}
+      <p class="error"><strong>Error:</strong>{{ error }}</p>
+    {% endif %}
+
+    <!-- flash messages -->
+    {% for messages in get_flashed_messages() %}
+      {{ messages }}
+    {% endfor %}
+  </div>
+  <br>
+  <br>
+  <br>
+  <footer>
+  	<div>
+  		<h5>Design. Build. Apply!</h5>
+  		<h6>SinclairPythonAkoto &copy &#127463; &#127463;</h6>
+  	</div>
+  </footer>
+</body>
+</html>

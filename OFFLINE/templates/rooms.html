@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ title }}</title>
+  <meta name="description" content="Display all the rooms in the house.">
+  <meta name="author" content="SinclairPythonAkoto">
+<style>
+div.gallery {
+  border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: darkblue;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: yellow;
+    color: black;
+}
+
+  .topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.emoji {
+  font-size: 35px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a href="{{ url_for('home') }}">Home</a>
+  <a href="#">Pics</a>
+  <a href="{{ url_for('rooms') }}">Rooms</a>
+  <a href="{{ url_for('contact') }}">Contact</a>
+  <a href="#"></a>
+  <a href="#"></a>
+  <a href="{{ url_for('admin') }}">Admin</a> 
+</div>
+
+<h2>{{ title }}</h2>
+<h4>Click <a href="#">here</a> if you wish to enquire.</h4>
+
+<div style="padding:6px;">
+  <p>DESCRIPTION OF HOUSE & AREA GOES HERE..</p>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="static/ssga_room1.jpg">
+      <img src="static/ssga_room1.jpg" alt="room 1" width="600" height="400">
+    </a>
+    <div class="desc">
+      <strong>Room 1:  $175 BD weekly</strong><br><br>
+      <div>
+        <div><i class='emoji'>&#128161;</i><br>Light</div>
+        <div><i class='emoji'>&#128167;</i><br>Water</div>
+        <div><i class='emoji'>&#128187;</i><br>Wifi</div>
+        <div><i class='emoji'>&#127378;</i><br>Fan</div>
+        <div><i class='emoji'>&#129380;</i><br>Mini Fridge</div>
+        <div><i class='emoji'>&#128716;</i><br>Double bed</div>
+        <div><a href="#">More Details</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="static/ssga_room2.jpg">
+      <img src="static/ssga_room2.jpg" alt="room 2" width="600" height="400">
+    </a>
+    <div class="desc">
+      <strong>Room 2:  $150 BD weekly</strong><br><br>
+      <div>
+        <div><i class='emoji'>&#128161;</i><br>Light</div>
+        <div><i class='emoji'>&#128167;</i><br>Water</div>
+        <div><i class='emoji'>&#128187;</i><br>Wifi</div>
+        <div><i class='emoji'>&#127378;</i><br>Fan</div>
+        <div><i class='emoji'>&#128716;</i><br>Single bed</div>
+        <div><a href="#">More Details</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="static/ssga_room3.jpg">
+      <img src="static/ssga_room3.jpg" alt="room 3" width="600" height="400">
+    </a>
+    <div class="desc">
+      <strong>Room 3:  $200 BD weekly</strong>
+      <div>
+        <div><i class='emoji'>&#128161;</i><br>Light</div>
+        <div><i class='emoji'>&#128167;</i><br>Water</div>
+        <div><i class='emoji'>&#128187;</i><br>Wifi</div>
+        <div><i class='emoji'>&#127378;</i><br>Fan</div>
+        <div><i class='emoji'>&#128716;</i><br>Double bed</div>
+        <div><i class='emoji'>&#128701; &#128703;</i><br>En-suite</div>
+        <div><a href="#">More Details</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="static/ssga_room4.jpg">
+      <img src="static/ssga_room4.jpg" alt="room 4" width="600" height="400">
+    </a>
+    <div class="desc">
+      <strong>Room 4:  $175 BD weekly</strong>
+      <div>
+        <div><i class='emoji'>&#128161;</i><br>Light</div>
+        <div><i class='emoji'>&#128167;</i><br>Water</div>
+        <div><i class='emoji'>&#128187;</i><br>Wifi</div>
+        <div><i class='emoji'>&#127378;</i><br>Fan</div>
+        <div><i class='emoji'>&#128716;</i><br>Single bed</div>
+        <div><a href="#">More Details</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="clearfix"></div>
+
+</body>
+<br>
+<br>
+<br>
+<footer>
+  <div>
+    <h5>Design. Build. Apply!</h5>
+    <h6>SinclairPythonAkoto &copy &#127463; &#127463;</h6>
+  </div>
+</footer>
+</html>

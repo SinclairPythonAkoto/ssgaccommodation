@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+
+<title>
+	{{ title }}
+	<meta name="description" content="SSG Accommodation admin page; management can review enquiries and send emails as a response.">
+	<meta name="author" content="SinclairPythonAkoto">
+</title>
+
+
+{% block content %}
+
+<h1>SSG Accommodation Management</h1>
+
+<form action="{{ url_for('admin') }}" method="post">
+	<p>Hello Admin!</p>
+
+	{% if data %}
+		<table>
+			<tr>
+				<th>NAME</th>
+				<th>AGE</th>
+				<th>GENDER</th>
+				<th>EMAIL</th>
+				<th>INTERESTED IN</th>
+				<th>QUESTIONS</th>
+			</tr>
+			{% for d in data %}
+				<tr name="response">
+					<td name="user_name" value="{{ d.name }}">{{ d.name }}</td>
+					<td>{{ d.age }}</td>
+					<td>{{ d.sex }}</td>
+					<td name="user_email" value="{{ d.email }}">{{ d.email }}</td>
+					<td>{{ d.interest }}</td>
+					<td>{{ d.questions }}</td>
+				</tr>
+			{% endfor %}
+		</table>
+	{% endif %}
+
+<p>Click <a href="{{ url_for('send_email') }}">here</a> to reply to your messages.</p>
+</form>
+<br>
+<br>
+<br>
+<a href="{{ url_for('logout') }}">Logout</a>
+{% endblock %}

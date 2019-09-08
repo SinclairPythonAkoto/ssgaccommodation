@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>{{ title }}</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+/* Style the body */
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+
+/* Header/Logo Title */
+.header {
+  padding: 60px;
+  text-align: center;
+  background: darkblue;
+  color: yellow;
+  font-size: 30px;
+}
+
+/* Page Content */
+.content {padding:20px;}
+
+.topnav {
+    overflow: hidden;
+    background-color: darkblue;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: yellow;
+    color: black;
+}
+
+  .topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+</style>
+</head>
+{% block content %}
+<body>
+  <div class="topnav">
+    <a href="{{ url_for('home') }}">Home</a>
+    <a href="#">Pics</a>
+    <a href="{{ url_for('rooms') }}">Rooms</a>
+    <a href="{{ url_for('contact') }}">Contact</a>
+    <a href="#"></a>
+    <a href="#"></a>
+    <a href="{{ url_for('admin') }}">Admin</a> 
+  </div>
+  
+
+  <div class="header">
+    <h1>SSG Accommodation</h1>
+    <p style="font-style: italic; font-family: Snell Roundhand, cursive;">Home is where the heart is!</p>
+  </div>
+  <div class="content">
+    <h1>{{ title }}</h1>
+    <hr>
+    <p><a href="#">Pictures</a>    View pictures of the accommodation and of the friendly community.</p>
+    <p><a href="{{ url_for('rooms') }}">Rooms</a>    View the different rooms.</p>
+    <p><a href="{{ url_for('contact') }}">Contact</a>    Contact SSG Accommodation for availability.</p>
+    <hr>
+  </div>
+  {% endblock %}
+</body>
+<br>
+<br>
+<br>
+<footer>
+  <div>
+    <h5>Design. Build. Apply!</h5>
+    <h6>SinclairPythonAkoto &copy &#127463; &#127463;</h6>
+  </div>
+</footer>
+</html>

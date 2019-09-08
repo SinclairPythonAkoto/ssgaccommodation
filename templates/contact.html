@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<form action="/contact" method="post">
+	<h1 style="text-align: center; font-style: italic;" >{{ title }}</h1>
+	<p>Please enter your details below, SSG Accommodation will get back to you as soon as possible.</p>
+	<div class="card">
+		<input id="username" type="text" name="username" placeholder="Your Name" required>
+		<input id="age" type="number" name="age" placeholder="Age" required>
+		<select id="select_sex" name="select_sex" required>
+			<option disabled selected value="">Select Gender</option>
+			<option value="male">Male</option>
+			<option value="female">Female</option>
+			<option value="prefer_not_to_say">Prefer Not To Say</option>
+		</select>
+		<input id="email" type="text" name="email" placeholder="Enter Email" required>
+		<select id="interest" name="interest">
+			<option disabled selected value="">Interested in..</option>
+			<option value="room1">Room 1:  $175BD weekly</option>
+			<option value="room2">Room 2:  $150BD weekly</option>
+			<option value="room3">Room 3:  $200BD weekly</option>
+			<option value="room4">Room 4:  $175BD weekly</option>
+		</select>
+		<textarea id="questions" name="questions" placeholder="Leave any questions or enquiries here and SSG Accommodation will respond back to you as soon as possible.." style="height:200px"></textarea>
+		<input type="submit" value="Submit">
+	</div>
+</form>
+
+{% endblock %}

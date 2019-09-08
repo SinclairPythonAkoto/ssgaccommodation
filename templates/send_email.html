@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+<title>
+	{{ title }}
+	<meta name="description" content="The management of SSG Accommodation can reply via email back to the enquiries posted on the SSGA Admin Page.">
+	<meta name="author" content="SinclairPythonAkoto">
+</title>
+
+{% block content %}
+
+<h1 style="text-align: center;">{{ title }}</h1>
+
+<form action="{{ url_for('send_email') }}" method="post">
+	<div class="card">
+		<img src="static/email.png" alt="sandraEmail" style="width: 100%">
+		<label for="sendMail">Respond back to your enquries!</label>
+		<input id="sendMail" type="text" name="emailReciever" placeholder="someone@email.com" required>
+		<input id="subjectTitle" type="text" name="emailSubject" placeholder="Subject:" required>
+		<p>Enter your message you wish to send below.</p>
+		<label for="textBox" rows></label>
+		<textarea id="textBox" rows="10" cols="35" name="emailContent" placeholder="write your email here..." required></textarea><br>
+	    <p><button type="submit">Send Email!</button></p>
+	    <a href="{{ url_for('logout') }}">Logout</a>
+	</div>
+</form>
+
+{% endblock %}

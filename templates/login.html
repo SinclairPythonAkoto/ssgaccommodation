@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+<title>
+	{{ title }}
+	<meta name="description" content="Login into SSGA admin page.">
+	<meta name="author" content="SinclairPythonAkoto">
+</title>
+
+{% block content %}
+
+<h1 style="text-align: center;">{{ title }}</h1>
+
+<p style="text-align: center;">Enter your username & password to login as Management.</p>
+
+<form action="{{ url_for('login') }}" method="post">
+	<div class="card">
+		<input type="text" name="username" placeholder="Username" required>
+		<input type="password" name="password" placeholder="Enter Password" required>
+		<button type="submit">LOGIN</button>
+	</div>
+</form>
+
+{% endblock %}

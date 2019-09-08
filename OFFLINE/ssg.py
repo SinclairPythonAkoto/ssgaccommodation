@@ -11,7 +11,7 @@ app.config.update(dict(
     MAIL_USE_TLS = True,
     MAIL_USE_SSL = False,
     MAIL_USERNAME = 'ssgaccommodation@gmail.com', # jonny email
-    MAIL_PASSWORD = 'Shalieka2018', # email password
+    MAIL_PASSWORD = '****', # email password
     MAIL_DEFAULT_SENDER = ('SSG Accommodation', 'ssgaccommodation@gmail.com'), #('NAME OR TITLE OF SENDER', 'SENDER EMAIL ADDRESS')
     MAIL_MAX_EMAILS = 5
 ))
@@ -106,7 +106,7 @@ def login():
 	if request.method == 'GET':
 		return render_template('login.html', title=title)
 	else:
-		if admin == "gloria" and admin_pw == "shalieka2018":
+		if admin == "admin" and admin_pw == "admin":
 			session['logged_in'] = True
 			flash('Welcome back Gloria, you have just logged in!')
 			return redirect(url_for('admin'))

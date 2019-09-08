@@ -108,7 +108,7 @@ def login():
 	if request.method == 'GET':
 		return render_template('login.html', title=title)
 	else:
-		if admin == os.getenv("SSGA_ADMIN") and admin_pw == os.getenv("SSGA_ADMIN_PW"):
+		if admin == os.getenv("SGGA_ADMIN") and admin_pw == os.getenv("SSGA_ADMIN_PW"):
 			session['logged_in'] = True
 			flash('Welcome back Gloria, you have just logged in!')
 			return redirect(url_for('admin'))

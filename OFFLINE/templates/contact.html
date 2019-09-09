@@ -2,6 +2,13 @@
 
 {% block content %}
 
+<!-- <style>
+	body {
+		background-color: lightyellow;
+	}
+</style> -->
+
+<body>
 <form action="/contact" method="post">
 	<h1 style="text-align: center; font-style: italic;" >{{ title }}</h1>
 	<p>Please enter your details below, SSG Accommodation will get back to you as soon as possible.</p>
@@ -14,7 +21,7 @@
 			<option value="female">Female</option>
 			<option value="prefer_not_to_say">Prefer Not To Say</option>
 		</select>
-		<input id="email" type="text" name="email" placeholder="Enter Email" required>
+		<input id="email" type="text" name="email" placeholder="Enter Your Email" required>
 		<select id="interest" name="interest">
 			<option disabled selected value="">Interested in..</option>
 			<option value="room1">Room 1:  $175BD weekly</option>
@@ -26,5 +33,6 @@
 		<input type="submit" value="Submit">
 	</div>
 </form>
+</body>
 
 {% endblock %}

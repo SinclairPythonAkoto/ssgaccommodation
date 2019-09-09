@@ -6,5 +6,5 @@ CREATE TABLE ssg_contact (
   sex VARCHAR,
   email VARCHAR,
   interest VARCHAR,
-  questions VARCHAR,
+  questions VARCHAR
   );

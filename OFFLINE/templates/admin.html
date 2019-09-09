@@ -8,8 +8,17 @@
 </title>
 
 
+
+
 {% block content %}
 
+<style>
+	body {
+		background-color: lightgray;
+	}
+</style>
+
+<body>
 <h1>SSG Accommodation Management</h1>
 
 <form action="{{ url_for('admin') }}" method="post">
@@ -44,4 +53,5 @@
 <br>
 <br>
 <a href="{{ url_for('logout') }}">Logout</a>
+</body>
 {% endblock %}

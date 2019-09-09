@@ -103,11 +103,11 @@ def contact():
 def login():
 	title = "SSGA Login"
 	error = None
-	admin = request.form.get("username")
-	admin_pw = request.form.get("password")
 	if request.method == 'GET':
 		return render_template('login.html', title=title)
 	else:
+		admin = request.form.get("username")
+		admin_pw = request.form.get("password")
 		if admin == os.getenv("SGGA_ADMIN") and admin_pw == os.getenv("SSGA_ADMIN_PW"):
 			session['logged_in'] = True
 			flash('Welcome back Gloria, you have just logged in!')
